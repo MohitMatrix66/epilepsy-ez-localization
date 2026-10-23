@@ -1,0 +1,21 @@
+subject,clinical_side,clinical_side_text,predicted_side,side_correct,margin_left_minus_right,side_model,side_model_p_left,side_model_correct,clinical_lobe,top_region,top_lobe,lobe_correct,mri_result,mri_lesion,mri_lesion_side,hippocampal_sclerosis_side,hippocampus_left,hippocampus_right,sick_hippocampus_higher
+sub-PID01,L,Left only,L,True,0.0263,L,0.665,True,temporal,ctx-rh-lingual,occipital,False,Potential Epileptogenic Lesion,Mesial temporal sclerosis,L,L,0.553,0.536,True
+sub-PID03,L,Left only,L,True,0.0416,not sure,0.571,,parietal,ctx-lh-lingual,occipital,False,Nonspecific Abnormality,,,,0.653,0.604,
+sub-PID05,L,Left only,L,True,0.0317,L,0.654,True,temporal,ctx-lh-parahippocampal,temporal,True,Normal,,,,0.696,0.67,
+sub-PID06,R,Right only,R,True,-0.0249,L,0.606,False,temporal,ctx-lh-parahippocampal,temporal,True,Potential Epileptogenic Lesion,Mesial temporal sclerosis,R,R,0.691,0.763,True
+sub-PID07,L,Left > Right,L,True,0.0359,not sure,0.454,,frontal,ctx-lh-lingual,occipital,False,Nonspecific Abnormality,,,,0.601,0.622,
+sub-PID09,,Inconclusive,R,,-0.0102,not sure,0.57,,,ctx-rh-parahippocampal,temporal,,Potential Epileptogenic Lesion,Malformation of cortical/brain development,L,,0.589,0.648,
+sub-PID10,,Bilateral independent Seizure Onsets,L,,0.0173,not sure,0.544,,temporal,ctx-lh-parahippocampal,temporal,True,Normal,,,,0.647,0.691,
+sub-PID11,,Inconclusive,R,,-0.0074,not sure,0.585,,,ctx-lh-parahippocampal,temporal,,Normal,,,,0.711,0.704,
+sub-PID13,L,Left only,L,True,0.009,L,0.665,True,temporal,ctx-rh-fusiform,temporal,True,Nonspecific Abnormality,,,,0.657,0.597,
+sub-PID14,R,Right only,R,True,-0.0018,not sure,0.588,,,Right-Amygdala,temporal,,Nonspecific Abnormality,,,,0.586,0.603,
+sub-PID15,,Inconclusive,L,,0.0067,not sure,0.529,,,ctx-lh-parahippocampal,temporal,,Not Indicated/Not Performed,,,,0.644,0.591,
+sub-PID16,L,Left only,R,False,-0.0069,not sure,0.499,,temporal,ctx-rh-lingual,occipital,False,Potential Epileptogenic Lesion,"Neoplasia,Mesial temporal sclerosis",B,,0.526,0.564,
+sub-PID20,L,Left only,L,True,0.0131,not sure,0.566,,temporal,ctx-lh-lingual,occipital,False,Potential Epileptogenic Lesion,Traumatic Brain Injury,L,,0.598,0.619,
+sub-PID23,L,Left only,R,False,-0.0133,not sure,0.466,,temporal,ctx-lh-entorhinal,temporal,True,Potential Epileptogenic Lesion,Mesial temporal sclerosis,L,L,0.544,0.628,False
+sub-PID24,L,Left only,L,True,0.0196,not sure,0.461,,temporal,ctx-rh-parahippocampal,temporal,True,Nonspecific Abnormality,,,,0.573,0.613,
+sub-PID26,R,Right > Left,R,True,-0.0181,R,0.355,True,temporal,ctx-rh-lingual,occipital,False,Potential Epileptogenic Lesion,ventriculomegaly and bilateral hippocampal atrophy,B,,0.7,0.687,
+sub-PID27,R,Right only,L,False,0.0159,L,0.645,False,temporal,Right-Amygdala,temporal,True,Nonspecific Abnormality,,,,0.698,0.699,
+sub-PID28,L,Left only,L,True,0.0061,not sure,0.465,,temporal,Left-Amygdala,temporal,True,Potential Epileptogenic Lesion,Mesial temporal sclerosis,L,L,0.743,0.697,True
+sub-PID29,,Inconclusive,L,,0.0063,R,0.236,,,ctx-lh-lingual,occipital,,Potential Epileptogenic Lesion,Mesial temporal sclerosis,R,R,0.63,0.652,True
+sub-PID30,R,Right only,R,True,-0.0124,not sure,0.542,,,ctx-rh-fusiform,temporal,,Nonspecific Abnormality,,,,0.564,0.585,

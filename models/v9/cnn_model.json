@@ -1,0 +1,200 @@
+{
+ "version": "9",
+ "patch_version": "9",
+ "channels": [
+  "T1",
+  "T1-mirror"
+ ],
+ "patch_size": 32,
+ "patch_mm": 1.0,
+ "base": 16,
+ "dropout": 0.3,
+ "mirror": true,
+ "signature": "9e364c46079176fe",
+ "settings": {
+  "epochs": 40,
+  "batch": 32,
+  "lr": 0.001,
+  "patience": 8,
+  "min_epochs": 3,
+  "seeds": 3
+ },
+ "lopo": true,
+ "folds": [
+  {
+   "fold": 1,
+   "test_subjects": [
+    "sub-PID08"
+   ],
+   "models": [
+    "cnn_fold1_s0.pt",
+    "cnn_fold1_s1.pt",
+    "cnn_fold1_s2.pt"
+   ]
+  },
+  {
+   "fold": 2,
+   "test_subjects": [
+    "sub-PID22"
+   ],
+   "models": [
+    "cnn_fold2_s0.pt",
+    "cnn_fold2_s1.pt",
+    "cnn_fold2_s2.pt"
+   ]
+  },
+  {
+   "fold": 3,
+   "test_subjects": [
+    "sub-PID25"
+   ],
+   "models": [
+    "cnn_fold3_s0.pt",
+    "cnn_fold3_s1.pt",
+    "cnn_fold3_s2.pt"
+   ]
+  },
+  {
+   "fold": 4,
+   "test_subjects": [
+    "sub-PID12"
+   ],
+   "models": [
+    "cnn_fold4_s0.pt",
+    "cnn_fold4_s1.pt",
+    "cnn_fold4_s2.pt"
+   ]
+  },
+  {
+   "fold": 5,
+   "test_subjects": [
+    "sub-PID18"
+   ],
+   "models": [
+    "cnn_fold5_s0.pt",
+    "cnn_fold5_s1.pt",
+    "cnn_fold5_s2.pt"
+   ]
+  },
+  {
+   "fold": 6,
+   "test_subjects": [
+    "sub-PID02"
+   ],
+   "models": [
+    "cnn_fold6_s0.pt",
+    "cnn_fold6_s1.pt",
+    "cnn_fold6_s2.pt"
+   ]
+  },
+  {
+   "fold": 7,
+   "test_subjects": [
+    "sub-PID21"
+   ],
+   "models": [
+    "cnn_fold7_s0.pt",
+    "cnn_fold7_s1.pt",
+    "cnn_fold7_s2.pt"
+   ]
+  },
+  {
+   "fold": 8,
+   "test_subjects": [
+    "sub-PID19"
+   ],
+   "models": [
+    "cnn_fold8_s0.pt",
+    "cnn_fold8_s1.pt",
+    "cnn_fold8_s2.pt"
+   ]
+  },
+  {
+   "fold": 9,
+   "test_subjects": [
+    "sub-PID04"
+   ],
+   "models": [
+    "cnn_fold9_s0.pt",
+    "cnn_fold9_s1.pt",
+    "cnn_fold9_s2.pt"
+   ]
+  },
+  {
+   "fold": 10,
+   "test_subjects": [
+    "sub-PID17"
+   ],
+   "models": [
+    "cnn_fold10_s0.pt",
+    "cnn_fold10_s1.pt",
+    "cnn_fold10_s2.pt"
+   ]
+  }
+ ],
+ "final": {
+  "subjects": [
+   "sub-PID02",
+   "sub-PID04",
+   "sub-PID08",
+   "sub-PID12",
+   "sub-PID17",
+   "sub-PID18",
+   "sub-PID19",
+   "sub-PID21",
+   "sub-PID22",
+   "sub-PID25"
+  ],
+  "epochs": 7,
+  "models": [
+   "cnn_final_s0.pt",
+   "cnn_final_s1.pt",
+   "cnn_final_s2.pt"
+  ]
+ },
+ "training_subjects": [
+  "sub-PID02",
+  "sub-PID04",
+  "sub-PID08",
+  "sub-PID12",
+  "sub-PID17",
+  "sub-PID18",
+  "sub-PID19",
+  "sub-PID21",
+  "sub-PID22",
+  "sub-PID25"
+ ],
+ "best_epochs": [
+  5,
+  7,
+  7,
+  7,
+  6,
+  4,
+  16,
+  9,
+  5,
+  16,
+  10,
+  14,
+  6,
+  4,
+  4,
+  3,
+  12,
+  13,
+  4,
+  7,
+  4,
+  23,
+  25,
+  4,
+  15,
+  9,
+  22,
+  8,
+  4,
+  7
+ ],
+ "left_right_test": 0.576
+}

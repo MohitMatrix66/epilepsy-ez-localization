@@ -1,0 +1,18 @@
+# 02_region_features   2026-10-22 09:27:30   python 02_region_features.py
+# project version 9
+
+Subjects: 10   T2 features: no (no T2 image for sub-PID17, sub-PID19)   thickness features: no (FreeSurfer stats tables not in the dataset)
+  sub-PID02: 82 regions
+  sub-PID04: 82 regions
+  sub-PID08: 82 regions
+  sub-PID12: 82 regions
+  sub-PID17: 82 regions
+  sub-PID18: 82 regions
+  sub-PID19: 82 regions
+  sub-PID21: 82 regions
+  sub-PID22: 82 regions
+  sub-PID25: 82 regions
+
+Regions total: 820   with electrodes (usable for training): 117   positive: 37 (31.6%)   no label because of an uncertain site: 71
+Feature columns: ['f_volume_rel', 'f_t1_rel', 'f_t1_cv', 'f_volume_rel_asym', 'f_t1_rel_asym', 'f_t1_cv_asym']
+Saved <project>\outputs\region_table.csv

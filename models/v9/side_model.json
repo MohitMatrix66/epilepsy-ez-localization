@@ -1,0 +1,61 @@
+{
+ "version": "9",
+ "features": [
+  "asym_volume_Hippocampus",
+  "asym_volume_Amygdala",
+  "asym_volume_Thalamus",
+  "asym_t2_Hippocampus",
+  "asym_thickness_temporal"
+ ],
+ "mean": [
+  -0.03783779243353893,
+  -0.09794765976680113,
+  0.018027275873587573,
+  0.0011240509582858477,
+  0.0
+ ],
+ "scale": [
+  0.15240017270053213,
+  0.1364976211107816,
+  0.06867642597684659,
+  0.04820833381336322,
+  1.0
+ ],
+ "coef": [
+  -0.392288557931431,
+  0.3752259322634089,
+  -0.5129745584299967,
+  -0.10223281619915463,
+  0.0
+ ],
+ "intercept": 0.07720334164307299,
+ "not_sure": 0.1,
+ "C": 0.3,
+ "trained_on": [
+  "sub-PID01",
+  "sub-PID02",
+  "sub-PID03",
+  "sub-PID04",
+  "sub-PID05",
+  "sub-PID06",
+  "sub-PID07",
+  "sub-PID08",
+  "sub-PID12",
+  "sub-PID13",
+  "sub-PID14",
+  "sub-PID16",
+  "sub-PID17",
+  "sub-PID18",
+  "sub-PID19",
+  "sub-PID20",
+  "sub-PID21",
+  "sub-PID22",
+  "sub-PID23",
+  "sub-PID24",
+  "sub-PID25",
+  "sub-PID26",
+  "sub-PID27",
+  "sub-PID28",
+  "sub-PID30"
+ ]
+}

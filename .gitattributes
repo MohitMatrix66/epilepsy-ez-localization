@@ -1,0 +1,7 @@
+# Keep every file byte-for-byte as committed (no line-ending conversion on Windows), so that the checksums in
+# tools/FILES.sha256 match on every computer and tools/check_install.py says INSTALL OK.
+* -text
+
+*.pt     binary
+*.png    binary
+*.xlsx   binary

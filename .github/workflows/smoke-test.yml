@@ -1,0 +1,58 @@
+# Runs the whole pipeline on synthetic patients (no real data, no download from the dataset) on every push.
+name: smoke-test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install the packages (CPU-only PyTorch)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r requirements.txt
+
+      - name: Check the installation and the file checksums
+        run: python tools/check_install.py
+
+      - name: Check that the trained model loads
+        if: hashFiles('models/v9/cnn_final_s0.pt') != ''
+        run: |
+          python - <<'EOF'
+          import importlib.util, json, sys, torch
+          sys.path.insert(0, ".")
+          spec = importlib.util.spec_from_file_location("cnn", "05_train_cnn.py")
+          cnn = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(cnn)
+          card = json.load(open("models/v9/cnn_model.json"))
+          x = torch.zeros(2, len(card["channels"]), card["patch_size"], card["patch_size"], card["patch_size"])
+          for name in card["final"]["models"]:
+              net = cnn.SmallCNN3D(len(card["channels"]), base=card["base"], dropout=card["dropout"])
+              net.load_state_dict(torch.load(f"models/v9/{name}", map_location="cpu"))
+              p = cnn.flip_average(net.eval(), x)
+              print(name, "loads; output", tuple(p.shape))
+          EOF
+
+      - name: Smoke test (the whole pipeline on synthetic patients)
+        run: python tools/smoke_test.py
+
+      - name: Keep the logs when it fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-test-logs
+          path: outputs_synthetic/logs
+          if-no-files-found: ignore

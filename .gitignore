@@ -1,0 +1,30 @@
+# ---- results and data made by the scripts: never commit patient data ----
+outputs/
+outputs_synthetic/
+synthetic_data/
+SOZ/results/
+new_patient_results/*/
+new_patient_results/comparison_*
+new_patient_results/run_log_*
+*.nii
+*.nii.gz
+*.mgz
+*.edf
+*.npz
+colab_results.zip
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+*.egg-info/
+
+# ---- editors and operating systems ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

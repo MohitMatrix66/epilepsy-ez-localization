@@ -1,0 +1,56 @@
+
+================================================================================================================
+SOZ LABELS (version 6.1)
+  method: EI + line length, bipolar (an onset site of either) - EI: search -10 to +10 s, a jump before -5 s =
+    already active, onset site = EI >= 0.3; line length: search -5 to +10 s, z >= 4 lasting 80% of 9 s, onset
+    site = onset index >= 0.3
+  chosen by the expert benchmark (2026-10-22T08:57:44): test F1 0.40 vs EI 0.30
+  SOZ = onset site in at least 2 usable seizures and at least 25% of them
+================================================================================================================
+  subject  seizures  usable  sites  SOZ  uncertain     side  started_at_SOZ     label quality  train  v5 SOZ  same as v5
+sub-PID02        18      18     99    8         30      ?:8            0.94                ok   True       4        0.50
+sub-PID03        14      12     84    0         39        -               - no repeated onset  False       3        0.00
+sub-PID04         7       5     95    4         46      R:4            0.80                ok   True       4        0.00
+sub-PID07         2       1    148   23          4     L:23            1.00    single seizure  False       0        0.00
+sub-PID08         4       4     96   15          6 L:14/R:1            1.00                ok   True       3        0.20
+sub-PID12         5       5    117   18         22 L:15/R:3            1.00                ok   True       4        0.16
+sub-PID16        13      13    130    0         38        -               - no repeated onset  False       2        0.00
+sub-PID17        20      20     69   11         31     L:11            0.90                ok   True       9        0.67
+sub-PID18        10       9    104    2         27      L:2            0.56                ok   True       1        0.50
+sub-PID19        17      17     83   11         19     R:11            1.00                ok   True       7        0.64
+sub-PID20        13      13    156    4         61      L:4            0.62                ok   True       2        0.20
+sub-PID21         3       3     75    3         12      L:3            0.67                ok   True       2        0.67
+sub-PID22         5       5    132   13         29     R:13            1.00                ok   True       6        0.46
+sub-PID25         4       4    105    6         11      L:6            1.00                ok   True       4        0.43
+sub-PID27         3       3    125    0         30        -               - no repeated onset  False       0           -
+================================================================================================================
+usable = seizures that can be used for labels; started_at_SOZ = share of the usable seizures in which the SOZ, or a site
+right next to it, is an onset site; v5 SOZ = SOZ sites of the version 5 EI; same as v5 = overlap (1 = the same sites).
+
+Seizures that could not be used, and why:
+  sub-PID03: EI state change + line length no onset 1; EI no onset + line length already active 1
+  sub-PID04: EI state change + line length no onset 2
+  sub-PID07: EI state change + line length no onset 1
+  sub-PID18: EI state change + line length no onset 1
+
+SOZ sites per patient:
+  sub-PID02: DHT01-DHT02, DHT02-DHT03, DHT03-DHT04, DHAA03-DHAA04, DHAA02-DHAA03, PST02-PST03, PST01-PST02, DHAA01-DHAA02
+  sub-PID03: -
+  sub-PID04: RPT02-RPT03, RPT03-RPT04, RDH01-RDH02, RG07-RG08
+  sub-PID07: LA09-LA10, LA10-LA11, LC05-LC06, LC06-LC07, LD01-LD02, LD02-LD03, LD03-LD04, LD05-LD06, LF04-LF05, LG01-LG02, LG05-LG06, LG06-LG07, LH10-LH11, LH11-LH12, LJ11-LJ12
+  sub-PID08: LH01-LH02, LH02-LH03, LAT02-LAT03, LG51-LG52, LG52-LG53, LA01-LA02, LA02-LA03, LG33-LG34, LG42-LG43, LG53-LG54, LG58-LG59, LG59-LG60, LG60-LG61, LMT03-LMT04, RH03-RH04
+  sub-PID12: LH05-LH06, LH03-LH04, LH06-LH07, LH07-LH08, LI04-LI05, RB07-RB08, RE05-RE06, LB07-LB08, LG02-LG03, LH01-LH02, LH04-LH05, LI03-LI04, LI07-LI08, LK04-LK05, LL03-LL04
+  sub-PID16: -
+  sub-PID17: LB01-LB02, LB02-LB03, LB03-LB04, LA03-LA04, LA04-LA05, LA02-LA03, LA01-LA02, LA05-LA06, LG02-LG03, LC01-LC02, LG01-LG02
+  sub-PID18: LA08-LA09, LA10-LA11
+  sub-PID19: RA04-RA05, RA02-RA03, RB02-RB03, RA01-RA02, RA03-RA04, RB04-RB05, RB01-RB02, RB03-RB04, RC01-RC02, RA05-RA06, RC02-RC03
+  sub-PID20: LA02-LA03, LF01-LF02, LH02-LH03, LH03-LH04
+  sub-PID21: LB01-LB02, LC01-LC02, LC02-LC03
+  sub-PID22: RA07-RA08, RB01-RB02, RD02-RD03, RD03-RD04, RD04-RD05, RF01-RF02, RG01-RG02, RL01-RL02, RM01-RM02, RM02-RM03, RB02-RB03, RG02-RG03, RK01-RK02
+  sub-PID25: LA02-LA03, LB02-LB03, LA01-LA02, LA03-LA04, LB01-LB02, LB03-LB04
+  sub-PID27: -
+
+118 SOZ sites, 405 uncertain sites; 11 of 15 patients have labels good enough for training (version 5 EI: 13).
+(Patients in EXCLUDE_FROM_TRAINING in config.py are left out in step 3.)
+Saved soz_labels.csv, soz_summary.csv, soz_onset_per_seizure.csv, seizure_info.csv, name_matching.csv, soz_*_ei_v5.csv in <project>\SOZ\results
+Next: python tools\check_unlocalized.py --all   then   python SOZ\03_build_contacts.py

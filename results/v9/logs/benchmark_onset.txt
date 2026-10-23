@@ -1,0 +1,103 @@
+# benchmark_onset   2026-10-22 08:57:05   python tools\benchmark_onset.py
+# project version 9
+
+Expert benchmark: 40 of 40 seizures downloaded
+  [1/40] sub-HUP224 ictal339135: 230 contacts / 192 pairs, 6 consensus onset channels
+  [2/40] sub-HUP224 ictal491462: 230 contacts / 187 pairs, 6 consensus onset channels
+  [3/40] sub-HUP224 ictal519177: 230 contacts / 198 pairs, 6 consensus onset channels
+  [4/40] sub-HUP225 ictal304944: 166 contacts / 144 pairs, 2 consensus onset channels
+  [5/40] sub-HUP225 ictal393496: 166 contacts / 141 pairs, 2 consensus onset channels
+  [6/40] sub-HUP225 ictal408565: 166 contacts / 143 pairs, 2 consensus onset channels
+  [7/40] sub-HUP229 ictal541692: 130 contacts / 108 pairs, 6 consensus onset channels
+  [8/40] sub-HUP230 ictal251120: 106 contacts / 83 pairs, 2 consensus onset channels
+  [9/40] sub-HUP230 ictal296207: 106 contacts / 81 pairs, 3 consensus onset channels
+  [10/40] sub-HUP230 ictal371979: 106 contacts / 82 pairs, 2 consensus onset channels
+  [11/40] sub-HUP235 ictal107374: 94 contacts / 82 pairs, 2 consensus onset channels
+  [12/40] sub-HUP235 ictal126735: 94 contacts / 78 pairs, 1 consensus onset channels
+  [13/40] sub-HUP235 ictal497084: 94 contacts / 83 pairs, 1 consensus onset channels
+  [14/40] sub-HUP238 ictal290006: 130 contacts / 103 pairs, 4 consensus onset channels
+  [15/40] sub-HUP238 ictal412267: 130 contacts / 101 pairs, 2 consensus onset channels
+  [16/40] sub-HUP238 ictal465564: 130 contacts / 104 pairs, 2 consensus onset channels
+  [17/40] sub-HUP246 ictal754436: 114 contacts / 95 pairs, 5 consensus onset channels
+  [18/40] sub-HUP247 ictal20694: 58 contacts / 50 pairs, 8 consensus onset channels
+  [19/40] sub-HUP247 ictal263028: 58 contacts / 44 pairs, 3 consensus onset channels
+  [20/40] sub-HUP247 ictal453842: 58 contacts / 47 pairs, 3 consensus onset channels
+  [21/40] sub-HUP249 ictal165399: 178 contacts / 157 pairs, 16 consensus onset channels
+  [22/40] sub-HUP250 ictal209153: 170 contacts / 147 pairs, 2 consensus onset channels
+  [23/40] sub-HUP250 ictal271748: 170 contacts / 151 pairs, 3 consensus onset channels
+  [24/40] sub-HUP250 ictal448880: 170 contacts / 147 pairs, 2 consensus onset channels
+  [25/40] sub-HUP253 ictal286026: 102 contacts / 81 pairs, 5 consensus onset channels
+  [26/40] sub-HUP253 ictal45666: 102 contacts / 83 pairs, 5 consensus onset channels
+  [27/40] sub-HUP253 ictal68657: 102 contacts / 84 pairs, 4 consensus onset channels
+  [28/40] sub-HUP257 ictal387681: 116 contacts / 100 pairs, 5 consensus onset channels
+  [29/40] sub-HUP257 ictal412046: 116 contacts / 101 pairs, 7 consensus onset channels
+  [30/40] sub-HUP257 ictal443897: 116 contacts / 98 pairs, 9 consensus onset channels
+  [31/40] sub-HUP261 ictal271899: 116 contacts / 97 pairs, 4 consensus onset channels
+  [32/40] sub-HUP263 ictal212899: 123 contacts / 105 pairs, 1 consensus onset channels
+  [33/40] sub-HUP263 ictal272461: 123 contacts / 103 pairs, 6 consensus onset channels
+  [34/40] sub-HUP266 ictal253214: 115 contacts / 70 pairs, 2 consensus onset channels
+  [35/40] sub-HUP266 ictal301581: 115 contacts / 75 pairs, 6 consensus onset channels
+  [36/40] sub-HUP266 ictal418859: 115 contacts / 72 pairs, 2 consensus onset channels
+  [37/40] sub-HUP267 ictal49987: 154 contacts / 131 pairs, 12 consensus onset channels
+  [38/40] sub-HUP273 ictal233275: 184 contacts / 147 pairs, 6 consensus onset channels
+  [39/40] sub-HUP275 ictal297659: 145 contacts / 123 pairs, 2 consensus onset channels
+  [40/40] sub-HUP288 ictal251098: 150 contacts / 128 pairs, 8 consensus onset channels
+================================================================================================================
+EXPERT BENCHMARK (version 6.1) - which onset method agrees best with epileptologists?
+================================================================================================================
+40 seizures from 19 patients, marked by 3-5 epileptologists (consensus onset channels). Tuning half: 18 seizures, test half: 22 seizures (other patients).
+Score = F1 between the method's onset channels and the epileptologists' (1 = same channels, 0 = none right;
+a seizure the method cannot use counts 0). Each method uses its best setting on the TUNING half; the TEST
+half was not used to choose anything.
+
+method                      montage                tuning F1  TEST F1    95% interval  answered precision  recall   timing
+--------------------------------------------------------------------------------------------------------------------------
+EI + line length (6.1)      bipolar                     0.53     0.40       0.27-0.53      100%      0.30    0.82     2.3s  <- chosen
+line length alone           bipolar                     0.40     0.39       0.21-0.57       77%      0.34    0.53     1.6s
+8-feature alone             bipolar                     0.40     0.32       0.13-0.53       73%      0.27    0.47     1.9s
+EI + line length (6.1)      common average (CAR)        0.40     0.32       0.20-0.45      100%      0.23    0.64     1.9s
+8-feature alone             common average (CAR)        0.37     0.34       0.17-0.51       95%      0.30    0.54     1.9s
+line length alone           common average (CAR)        0.36     0.33       0.17-0.50       91%      0.31    0.46     2.0s
+EI alone (version 5 idea)   bipolar                     0.33     0.30       0.17-0.42      100%      0.27    0.49     2.2s
+EI alone (version 5 idea)   common average (CAR)        0.33     0.22       0.13-0.32      100%      0.22    0.37     1.9s
+one epileptologist vs the others (human level)          0.66     0.66   (median 0.67)
+
+answered = seizures where the method gave onset channels; timing = median |method start - experts' start|.
+Settings of each row:
+  EI + line length (6.1)      bipolar   EI>=0.3 | z=4 oi=0.3
+  line length alone           bipolar   from=-5 z=4 last=9s oi=0.3 q=0.5
+  8-feature alone             bipolar   from=-5 z=5 last=9s oi=0.3 q=0.5
+  EI + line length (6.1)      average   EI>=0.3 | z=4 oi=0.3
+  8-feature alone             average   from=-5 z=3 last=5s oi=0.3 q=0.5
+  line length alone           average   from=-5 z=3 last=5s oi=0.3 q=0.5
+  EI alone (version 5 idea)   bipolar   lead=5 thr=0.3
+  EI alone (version 5 idea)   average   lead=5 thr=0.3
+
+CHOSEN: EI + line length (6.1), bipolar (EI>=0.3 | z=4 oi=0.3): best on the tuning half, and on the test half F1 0.40 vs EI 0.30.
+
+PATIENT LABELS with each method (the SOZ rule of step 2 on the 11 patients with >= 2 seizures, both halves):
+  method                      montage     SOZ F1  precision  recall   expert channels called not-SOZ
+  EI + line length (6.1)      bipolar       0.71       0.66    0.89                               2%
+  EI + line length (6.1)      average       0.44       0.43    0.63                              12%
+  line length alone           bipolar       0.42       0.70    0.52                              27%
+  8-feature alone             average       0.41       0.56    0.47                              27%
+  EI alone (version 5 idea)   bipolar       0.40       0.51    0.45                              26%
+  8-feature alone             bipolar       0.39       0.73    0.41                              38%
+  line length alone           average       0.34       0.60    0.38                              32%
+  EI alone (version 5 idea)   average       0.31       0.38    0.33                              28%
+  (precision = share of the SOZ sites on a channel the experts marked; recall = share of the experts'
+   usual onset channels inside the SOZ; the last column should be small: those would be wrong 'not SOZ'
+   examples for the model)
+
+By onset pattern (all seizures, the settings above): mean F1 with LVFA at onset / without LVFA
+  EI + line length (6.1)      bipolar   with LVFA 0.51 (15)   without LVFA 0.42 (25)
+  line length alone           bipolar   with LVFA 0.40 (15)   without LVFA 0.40 (25)
+  8-feature alone             bipolar   with LVFA 0.38 (15)   without LVFA 0.35 (25)
+  EI + line length (6.1)      average   with LVFA 0.38 (15)   without LVFA 0.34 (25)
+  8-feature alone             average   with LVFA 0.34 (15)   without LVFA 0.35 (25)
+  line length alone           average   with LVFA 0.30 (15)   without LVFA 0.37 (25)
+  EI alone (version 5 idea)   bipolar   with LVFA 0.44 (15)   without LVFA 0.23 (25)
+  EI alone (version 5 idea)   average   with LVFA 0.31 (15)   without LVFA 0.24 (25)
+
+Saved benchmark_choice.json (used by step 2), benchmark_scores.csv, benchmark_per_seizure.csv, benchmark_patients.csv in <project>\SOZ\results
+Next: python SOZ\01_scan_dataset.py  (if not done yet)  then  python SOZ\02_compute_soz.py

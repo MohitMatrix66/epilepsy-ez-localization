@@ -1,0 +1,10 @@
+numpy
+pandas
+scipy
+nibabel
+scikit-learn
+matplotlib
+openpyxl
+torch
+boto3
+mne

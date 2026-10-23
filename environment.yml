@@ -1,0 +1,21 @@
+# conda env create -f environment.yml   then   conda activate ez-localization
+# The package versions are the ones the published version 9 results were made with (Windows, Python 3.12).
+# PyTorch from PyPI is the CPU build on Windows and macOS. On Linux it includes CUDA (large download); for a
+# CPU-only Linux machine, install it first with:  pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+name: ez-localization
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - numpy==2.5.4
+      - scipy==1.18.1
+      - pandas==3.0.6
+      - nibabel==5.4.2
+      - scikit-learn==1.9.1
+      - matplotlib==3.11.2
+      - openpyxl==3.1.5
+      - mne==1.13.2
+      - boto3==1.43.114
+      - torch==2.14.1

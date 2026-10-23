@@ -1,0 +1,81 @@
+# 07_lateralization   2026-10-22 23:04:14   python 07_lateralization.py
+# project version 9
+
+25 patients with a clinical seizure-onset side and FreeSurfer files (L 16, R 9);  5 more without a clinical side;  T2 features (all-region model): no
+  sub-PID01: done (side-model measures available: 3 of 5)
+  sub-PID02: done (side-model measures available: 4 of 5)
+  sub-PID03: done (side-model measures available: 4 of 5)
+  sub-PID04: done (side-model measures available: 4 of 5)
+  sub-PID05: done (side-model measures available: 4 of 5)
+  sub-PID06: done (side-model measures available: 4 of 5)
+  sub-PID07: done (side-model measures available: 4 of 5)
+  sub-PID08: done (side-model measures available: 4 of 5)
+  sub-PID09: done (side-model measures available: 4 of 5)
+  sub-PID10: done (side-model measures available: 4 of 5)
+  sub-PID11: done (side-model measures available: 4 of 5)
+  sub-PID12: done (side-model measures available: 4 of 5)
+  sub-PID13: done (side-model measures available: 4 of 5)
+  sub-PID14: done (side-model measures available: 4 of 5)
+  sub-PID15: done (side-model measures available: 4 of 5)
+  sub-PID16: done (side-model measures available: 3 of 5)
+  sub-PID17: done (side-model measures available: 3 of 5)
+  sub-PID18: done (side-model measures available: 4 of 5)
+  sub-PID19: done (side-model measures available: 3 of 5)
+  sub-PID20: done (side-model measures available: 4 of 5)
+  sub-PID21: done (side-model measures available: 4 of 5)
+  sub-PID22: done (side-model measures available: 4 of 5)
+  sub-PID23: done (side-model measures available: 4 of 5)
+  sub-PID24: done (side-model measures available: 4 of 5)
+  sub-PID25: done (side-model measures available: 4 of 5)
+  sub-PID26: done (side-model measures available: 3 of 5)
+  sub-PID27: done (side-model measures available: 4 of 5)
+  sub-PID28: done (side-model measures available: 4 of 5)
+  sub-PID29: done (side-model measures available: 4 of 5)
+  sub-PID30: done (side-model measures available: 4 of 5)
+
+Leave-one-patient-out results (predicting the clinical seizure-onset side from the MRI):
+                                         model  patients  accuracy  balanced_accuracy  AUROC
+                                      majority        25     0.640              0.500    NaN
+                              hippocampus_rule        25     0.560              0.510    NaN
+                                        logreg        25     0.560              0.535  0.528
+                                    side_model        25     0.560              0.559  0.646
+side_model: MRI report = hippocampal sclerosis         6     0.333              0.200  0.200
+                side_model: all other patients        19     0.632              0.631  0.682
+side_model: only when sure (10 of 25 patients)        10     0.700              0.667  0.833
+
+Side model, every patient (tested by a model that never saw him/her):
+  subject side                     mri_lesion side_model_call  p_left_side_model
+sub-PID01    L      Mesial temporal sclerosis               L               0.66
+sub-PID02    R Malformation of cortical/brain        not sure               0.45
+sub-PID03    L                                       not sure               0.57
+sub-PID04    R                                       not sure               0.45
+sub-PID05    L                                              L               0.65
+sub-PID06    R      Mesial temporal sclerosis               L               0.61
+sub-PID07    L                                       not sure               0.45
+sub-PID08    L                                              L               0.67
+sub-PID12    L periventricular nodular hetero               L               0.66
+sub-PID13    L                                              L               0.67
+sub-PID14    R                                       not sure               0.59
+sub-PID16    L Neoplasia,Mesial temporal scle        not sure               0.50
+sub-PID17    L                                              R               0.30
+sub-PID18    L Malformation of cortical/brain        not sure               0.51
+sub-PID19    R                                       not sure               0.43
+sub-PID20    L         Traumatic Brain Injury        not sure               0.57
+sub-PID21    L Malformation of cortical/brain        not sure               0.40
+sub-PID22    R                                              R               0.38
+sub-PID23    L      Mesial temporal sclerosis        not sure               0.47
+sub-PID24    L                                       not sure               0.46
+sub-PID25    L      Mesial temporal sclerosis        not sure               0.52
+sub-PID26    R ventriculomegaly and bilateral               R               0.36
+sub-PID27    R                                              L               0.65
+sub-PID28    L      Mesial temporal sclerosis        not sure               0.47
+sub-PID30    R                                       not sure               0.54
+Patients without a clinical side (final side model): sub-PID09 not sure, sub-PID10 not sure, sub-PID11 not sure, sub-PID15 not sure, sub-PID29 R
+Side model weights (+ = points to the left when the left value is larger): volume_Hippocampus -0.39, volume_Amygdala +0.38, volume_Thalamus -0.51, t2_Hippocampus -0.10, thickness_temporal +0.00
+
+How to read this:
+ * 'majority' always says the more common side: any useful model must beat its balanced accuracy (0.5).
+ * balanced accuracy = average of 'left patients correct' and 'right patients correct'; AUROC = the fair
+   score that does not depend on a model's lean to one side (0.5 = guessing).
+ * With ~25 patients one patient = 4%, so differences of a few percent are not meaningful.
+Saved lateralization_predictions.csv, lateralization_metrics.csv and side_model.json in <project>\outputs

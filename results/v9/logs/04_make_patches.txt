@@ -1,0 +1,19 @@
+# 04_make_patches   2026-10-22 20:00:31   python 04_make_patches.py
+# project version 9
+
+679 contact sites from 10 patients, channels: ['T1', 'T1-mirror'], cubes 32^3 samples 1 mm apart (32 mm wide)  (no T2 image for sub-PID17, sub-PID19)
+
+patient      voxel sites  SOZ controls (training)  deep  midline tilt  pairs  clinical side
+sub-PID02   1.00mm    69    8        8          8    20         9.4 deg    47  Right only
+sub-PID04   1.00mm    49    4        4          4    20         2.9 deg    47  Right only
+sub-PID08   1.00mm    89   14       14         12    20         6.3 deg    47  Left only
+sub-PID12   0.80mm    81   14       14         13    20         1.2 deg    47  Left only
+sub-PID17   0.80mm    36   11       11         11    20         3.1 deg    47  Left only
+sub-PID18   0.80mm    76    2        2          2    20         4.3 deg    47  Left only
+sub-PID19   0.80mm    47   11       11         11    20         7.4 deg    47  Right only
+sub-PID21   0.80mm    55    3        3          0    20         7.6 deg    47  Left > Right
+sub-PID22   0.80mm    86   13       12         12    20         1.7 deg    47  Right only
+sub-PID25   0.80mm    91    6        6          6    20         4.9 deg    47  Left only
+
+Saved <project>\outputs\patches.npz  shape=(964, 2, 32, 32, 32): 679 sites (86 SOZ) + 85 mirror controls (79 used for training, the rest only for the left-right test) + 200 deep-structure cubes ('not SOZ', version 9)
+MRI voxel sizes: 0.8 mm: 7 patient(s), 1 mm: 3 patient(s) - every cube is 32 mm wide in all of them.

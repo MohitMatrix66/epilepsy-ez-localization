@@ -1,0 +1,155 @@
+# 03_build_contacts   2026-10-22 09:20:33   python SOZ\03_build_contacts.py
+# project version 9
+
+
+sub-PID02
+    reference MRI: sub-PID02_ses-research3T_acq-3D_space-T00mri_T1w_ras_defaced.nii.gz
+    coordinates: 122 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.892 at the same position vs 0.472 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 100%
+    matched 99 labelled sites (0 without coordinates); 30 uncertain (not used as 'not SOZ')
+    SOZ sites: side R 8; lobes ? 4, occipital 2, temporal 2   |   clinical onset: Right only, Multi-focal
+
+sub-PID03
+    reference MRI: sub-PID03_ses-research3T_acq-3D_space-T00mri_T1w_ras_defaced.nii.gz
+    coordinates: 130 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.824 at the same position vs 0.43 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 100%
+    matched 84 labelled sites (0 without coordinates); 39 uncertain (not used as 'not SOZ')
+    left out of training: label quality 'no repeated onset'
+
+sub-PID04
+    reference MRI: sub-PID04_ses-research3T_acq-3D_space-T00mri_T1w_ras_defaced.nii.gz
+    coordinates: 119 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.706 at the same position vs 0.375 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 100%
+    matched 95 labelled sites (0 without coordinates); 46 uncertain (not used as 'not SOZ')
+    SOZ sites: side R 4; lobes temporal 4   |   clinical onset: Right only, Temporal
+
+sub-PID07
+    reference MRI: sub-PID07_ses-research3T_acq-3D_space-T00mri_T1w_defaced.nii.gz
+    coordinates: 168 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.809 at the same position vs 0.463 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 87%
+    matched 148 labelled sites (0 without coordinates); 4 uncertain (not used as 'not SOZ')
+    SOZ sites: side L 22, ? 1; lobes frontal 14, ? 7, temporal 2   |   clinical onset: Left > Right, Frontal
+    left out of training: label quality 'single seizure'
+
+sub-PID08
+    reference MRI: sub-PID08_ses-research3T_acq-3D_space-T00mri_T1w_ras_defaced.nii.gz
+    coordinates: 118 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.855 at the same position vs 0.462 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 100%
+    1 SOZ site(s) on the other side than most of the SOZ -> uncertain: RH03-RH04
+    matched 96 labelled sites (0 without coordinates); 7 uncertain (not used as 'not SOZ')
+    SOZ sites: side L 14; lobes temporal 14   |   clinical onset: Left only, Temporal
+
+sub-PID12
+    reference MRI: sub-PID12_ses-research3T_acq-3D_space-T00mri_T1w_defaced.nii.gz
+    coordinates: 136 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.696 at the same position vs 0.403 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 82%
+    2 SOZ site(s) on the other side than most of the SOZ -> uncertain: RB07-RB08, RE05-RE06
+    matched 117 labelled sites (0 without coordinates); 24 uncertain (not used as 'not SOZ')
+    SOZ sites: side L 14, ? 2; lobes frontal 8, ? 4, parietal 3, temporal 1   |   clinical onset: Left only, Frontal
+
+sub-PID16
+    reference MRI: sub-PID16_ses-research3T_acq-3D_space-T00mri_T1w_defaced.nii.gz
+    coordinates: 144 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.678 at the same position vs 0.384 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 85%
+    matched 130 labelled sites (0 without coordinates); 38 uncertain (not used as 'not SOZ')
+    left out of training: label quality 'no repeated onset'
+
+sub-PID17
+    reference MRI: sub-PID17_ses-research3T_acq-3D_space-T00mri_T1w_defaced.nii.gz
+    coordinates: 92 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.74 at the same position vs 0.449 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 86%
+    matched 69 labelled sites (0 without coordinates); 31 uncertain (not used as 'not SOZ')
+    SOZ sites: side L 11; lobes temporal 9, deep 1, insula 1   |   clinical onset: Left only, Temporal
+
+sub-PID18
+    reference MRI: sub-PID18_ses-research3T_acq-3D_space-T00mri_T1w_defaced.nii.gz
+    coordinates: 122 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.762 at the same position vs 0.424 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 98%
+    matched 104 labelled sites (0 without coordinates); 27 uncertain (not used as 'not SOZ')
+    SOZ sites: side L 2; lobes temporal 2   |   clinical onset: Left only, Temporal
+
+sub-PID19
+    reference MRI: sub-PID19_ses-research3T_acq-3D_space-T00mri_T1w_defaced.nii.gz
+    coordinates: 96 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.69 at the same position vs 0.384 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 71%
+    matched 83 labelled sites (0 without coordinates); 19 uncertain (not used as 'not SOZ')
+    SOZ sites: side R 11; lobes temporal 11   |   clinical onset: Right only, Temporal
+
+sub-PID20
+    reference MRI: sub-PID20_ses-research3T_acq-3D_space-T00mri_T1w_defaced.nii.gz
+    coordinates: 183 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.786 at the same position vs 0.427 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 80%
+    matched 156 labelled sites (0 without coordinates); 61 uncertain (not used as 'not SOZ')
+    SOZ sites: side L 4; lobes parietal 2, temporal 1, cingulate 1   |   clinical onset: Left only, Temporal
+    left out of training: coordinates DOUBTFUL (tools/check_unlocalized.py), SOZ lobe not the clinical lobe, not confirmed by line length on the common average (tools/v7_car_linelength.py)  (EXCLUDE_FROM_TRAINING in config.py)
+
+sub-PID21
+    reference MRI: sub-PID21_ses-research3T_acq-3D_space-T00mri_T1w_defaced.nii.gz
+    coordinates: 88 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.744 at the same position vs 0.454 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 81%
+    matched 75 labelled sites (0 without coordinates); 12 uncertain (not used as 'not SOZ')
+    SOZ sites: side L 3; lobes temporal 2, ? 1   |   clinical onset: Left > Right, Multi-focal
+
+sub-PID22
+    reference MRI: sub-PID22_ses-research3T_acq-3D_space-T00mri_T1w_defaced.nii.gz
+    coordinates: 156 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.749 at the same position vs 0.405 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 78%
+    matched 132 labelled sites (0 without coordinates); 29 uncertain (not used as 'not SOZ')
+    SOZ sites: side R 13; lobes temporal 9, frontal 3, insula 1   |   clinical onset: Right only, Temporal
+
+sub-PID25
+    reference MRI: sub-PID25_ses-research3T_acq-3D_space-T00mri_T1w_defaced.nii.gz
+    coordinates: 120 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.743 at the same position vs 0.351 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 91%
+    matched 105 labelled sites (0 without coordinates); 11 uncertain (not used as 'not SOZ')
+    SOZ sites: side L 6; lobes temporal 5, insula 1   |   clinical onset: Left only, Temporal
+
+sub-PID27
+    reference MRI: sub-PID27_ses-research3T_acq-3D_space-T00mri_T1w_defaced.nii.gz
+    coordinates: 148 contacts from mm file (agrees with voxel file + MRI header)
+    MRI alignment test: correlation 0.736 at the same position vs 0.39 when shifted 4 mm -> ALIGNED
+    contacts in or within 5 voxels (4-5 mm) of the brain: 73%
+    matched 125 labelled sites (0 without coordinates); 30 uncertain (not used as 'not SOZ')
+    left out of training: label quality 'no repeated onset'
+
+====================================================================================================
+  subject  aligned  near_brain  SOZ SOZ side clinical side agree SOZ lobe clinical lobe agree     label quality  train
+sub-PID02     True       1.000    8        R    Right only  True    mixed   Multi-focal   None               ok   True
+sub-PID03     True       1.000    0              Left only  None               Parietal   None no repeated o...  False
+sub-PID04     True       1.000    4        R    Right only  True temporal      Temporal   True               ok   True
+sub-PID07     True       0.869   23        L  Left > Right  True  frontal       Frontal   True   single seizure  False
+sub-PID08     True       1.000   14        L     Left only  True temporal      Temporal   True               ok   True
+sub-PID12     True       0.816   16        L     Left only  True  frontal       Frontal   True               ok   True
+sub-PID16     True       0.854    0              Left only  None               Temporal   None no repeated o...  False
+sub-PID17     True       0.859   11        L     Left only  True temporal      Temporal   True               ok   True
+sub-PID18     True       0.984    2        L     Left only  True temporal      Temporal   True               ok   True
+sub-PID19     True       0.708   11        R    Right only  True temporal      Temporal   True               ok   True
+sub-PID20     True       0.803    4        L     Left only  True parietal      Temporal  False         excluded  False
+sub-PID21     True       0.807    3        L  Left > Right  True temporal   Multi-focal   None               ok   True
+sub-PID22     True       0.776   13        R    Right only  True temporal      Temporal   True               ok   True
+sub-PID25     True       0.908    6        L     Left only  True temporal      Temporal   True               ok   True
+sub-PID27     True       0.730    0             Right only  None               Temporal   None no repeated o...  False
+====================================================================================================
+SOZ version 6.1: side agrees with the clinical lateralization in 12 of 12 patients; lobe agrees in 9 of 10.
+SOZ version 5 (EI), same patients: side agrees with the clinical lateralization in 12 of 12 patients; lobe agrees in 8 of 8.
+(The clinical lateralization / localization is the decision of the multidisciplinary epilepsy surgery conference (dataset paper, Imtiaz et al. 2026) - a strong clinical reference, but not an independent ground truth: for the patients with iEEG it may already include the iEEG.)
+SOZ lobe = the most common lobe of the SOZ sites (all lobes are listed above for every patient); 'mixed' = no single most common lobe.
+
+contacts.csv: 975 sites, 88 SOZ, 236 uncertain (not used as 'not SOZ'), 10 patients for training -> <project>\SOZ\results\contacts.csv
+  patients: sub-PID02, sub-PID04, sub-PID08, sub-PID12, sub-PID17, sub-PID18, sub-PID19, sub-PID21, sub-PID22, sub-PID25
+contacts_all.csv: 1618 sites from 15 patients (all that passed the checks)
+Next: python tools\plot_seizure.py --audit   then   python 01_label_contacts.py  (and the model steps)

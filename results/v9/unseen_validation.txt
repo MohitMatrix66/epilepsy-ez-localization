@@ -1,0 +1,32 @@
+====================================================================================================
+THE FINAL MODEL ON PATIENTS IT NEVER SAW - against the clinical record (version 9)
+====================================================================================================
+  subject                   clinical_side_text predicted_side side_correct  margin_left_minus_right side_model side_model_correct clinical_lobe             top_region                     mri_result
+sub-PID01                            Left only              L         True                   0.0263          L               True      temporal         ctx-rh-lingual Potential Epileptogenic Lesion
+sub-PID03                            Left only              L         True                   0.0416   not sure                NaN      parietal         ctx-lh-lingual        Nonspecific Abnormality
+sub-PID05                            Left only              L         True                   0.0317          L               True      temporal ctx-lh-parahippocampal                         Normal
+sub-PID06                           Right only              R         True                  -0.0249          L              False      temporal ctx-lh-parahippocampal Potential Epileptogenic Lesion
+sub-PID07                         Left > Right              L         True                   0.0359   not sure                NaN       frontal         ctx-lh-lingual        Nonspecific Abnormality
+sub-PID09                         Inconclusive              R          NaN                  -0.0102   not sure                NaN               ctx-rh-parahippocampal Potential Epileptogenic Lesion
+sub-PID10 Bilateral independent Seizure Onsets              L          NaN                   0.0173   not sure                NaN      temporal ctx-lh-parahippocampal                         Normal
+sub-PID11                         Inconclusive              R          NaN                  -0.0074   not sure                NaN               ctx-lh-parahippocampal                         Normal
+sub-PID13                            Left only              L         True                   0.0090          L               True      temporal        ctx-rh-fusiform        Nonspecific Abnormality
+sub-PID14                           Right only              R         True                  -0.0018   not sure                NaN                       Right-Amygdala        Nonspecific Abnormality
+sub-PID15                         Inconclusive              L          NaN                   0.0067   not sure                NaN               ctx-lh-parahippocampal    Not Indicated/Not Performed
+sub-PID16                            Left only              R        False                  -0.0069   not sure                NaN      temporal         ctx-rh-lingual Potential Epileptogenic Lesion
+sub-PID20                            Left only              L         True                   0.0131   not sure                NaN      temporal         ctx-lh-lingual Potential Epileptogenic Lesion
+sub-PID23                            Left only              R        False                  -0.0133   not sure                NaN      temporal      ctx-lh-entorhinal Potential Epileptogenic Lesion
+sub-PID24                            Left only              L         True                   0.0196   not sure                NaN      temporal ctx-rh-parahippocampal        Nonspecific Abnormality
+sub-PID26                         Right > Left              R         True                  -0.0181          R               True      temporal         ctx-rh-lingual Potential Epileptogenic Lesion
+sub-PID27                           Right only              L        False                   0.0159          L              False      temporal         Right-Amygdala        Nonspecific Abnormality
+sub-PID28                            Left only              L         True                   0.0061   not sure                NaN      temporal          Left-Amygdala Potential Epileptogenic Lesion
+sub-PID29                         Inconclusive              L          NaN                   0.0063          R                NaN                       ctx-lh-lingual Potential Epileptogenic Lesion
+sub-PID30                           Right only              R         True                  -0.0124   not sure                NaN                      ctx-rh-fusiform        Nonspecific Abnormality
+
+Side, CNN: correct in 12 of 15 patients = 80% (95% interval 55%-93%); balanced accuracy 0.80; FAIR SCORE (AUROC of left-minus-right, not affected by a lean to one side) 0.84.
+      always guessing the more common side (L) would be right in 67%; the CNN said 'left' for 12 of 20 patients.
+Side, side model (leave-one-out): correct in 4 of 6 patients where it was sure (9 'not sure'); fair score (AUROC) 0.48.
+Sclerosis check: in 4 of 5 patients whose MRI report names one-sided hippocampal sclerosis, the CNN scored the SICK hippocampus above the healthy one (sub-PID01, sub-PID06, sub-PID23, sub-PID28, sub-PID29).
+Lobe of the top region = the clinical lobe in 8 of 14 patients (always saying 'temporal' would be right in 86%).
+Top region in a deep structure: 0 of 20 patients (v8.1: 19 of 20; version 9 does not assess them).
+Show this table next to any picture: it is the honest accuracy of the model on new patients.

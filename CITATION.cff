@@ -1,0 +1,73 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below, and please also cite the Penn 3T-7T dataset."
+title: "Epileptogenic-zone localization from MRI with iEEG-derived labels"
+abstract: >-
+  A 3D convolutional neural network that learns seizure-onset locations from intracranial EEG
+  (labels from an onset detector chosen on an expert-annotated benchmark) and predicts a probability
+  map, the hemisphere and ranked brain regions from a FreeSurfer-processed T1 MRI. Trained and tested
+  on the public Penn 3T-7T Paired Epilepsy Imaging dataset. Research prototype, not a clinical tool.
+type: software
+authors:
+  - given-names: Mohit
+    alias: MohitMatrix66
+version: "9.0"
+date-released: "2026-10-23"
+license: MIT
+repository-code: "https://github.com/MohitMatrix66/epilepsy-ez-localization"
+keywords:
+  - epilepsy
+  - epileptogenic zone
+  - seizure onset zone
+  - MRI
+  - intracranial EEG
+  - deep learning
+  - 3D CNN
+  - neuroimaging
+references:
+  - type: article
+    title: "A multimodal epilepsy dataset of paired 3-Tesla and 7-Tesla MRI and intracranial EEG"
+    authors:
+      - family-names: Imtiaz
+        given-names: Tamjid
+      - family-names: Lucas
+        given-names: Alfredo
+      - family-names: Josyula
+        given-names: Mariam
+      - family-names: Petillo
+        given-names: Nina
+      - family-names: Wagenaar
+        given-names: Joost
+      - family-names: Stein
+        given-names: Joel M.
+      - family-names: Das
+        given-names: Sandhitsu
+      - family-names: Sinha
+        given-names: Nishant
+      - family-names: Davis
+        given-names: Kathryn A.
+    journal: "Scientific Data"
+    volume: 13
+    start: 1320
+    year: 2026
+    doi: "10.1038/s41597-026-07540-5"
+  - type: data
+    title: "Penn 3T-7T Paired Epilepsy Imaging"
+    authors:
+      - family-names: Lucas
+        given-names: Alfredo
+      - name: "et al."
+    publisher:
+      name: "Pennsieve Discover"
+    year: 2026
+    doi: "10.26275/aosz-hj9u"
+  - type: data
+    title: "Multi-Expert Seizure Annotation: spontaneous and stimulation-induced seizures in stereotactic EEG"
+    authors:
+      - family-names: Ojemann
+        given-names: William K. S.
+      - name: "et al."
+    publisher:
+      name: "Pennsieve Discover"
+    year: 2026
+    doi: "10.26275/dely-fzwx"
+    license: CC-BY-4.0

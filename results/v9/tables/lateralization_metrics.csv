@@ -1,0 +1,8 @@
+model,patients,accuracy,balanced_accuracy,AUROC
+majority,25,0.64,0.5,
+hippocampus_rule,25,0.56,0.51,
+logreg,25,0.56,0.535,0.528
+side_model,25,0.56,0.559,0.646
+side_model: MRI report = hippocampal sclerosis,6,0.333,0.2,0.2
+side_model: all other patients,19,0.632,0.631,0.682
+side_model: only when sure (10 of 25 patients),10,0.7,0.667,0.833

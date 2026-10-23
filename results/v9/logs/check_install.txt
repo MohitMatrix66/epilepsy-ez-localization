@@ -1,0 +1,39 @@
+# check_install   2026-10-22 08:55:44   python tools\check_install.py --network
+# project version 9
+
+==============================================================================
+CHECKING THE INSTALLATION (version 9)
+==============================================================================
+Python 3.12.15 at <conda-env>\python.exe
+
+Packages:
+  numpy          2.5.4
+  scipy          1.18.1
+  pandas         3.0.6
+  mne            1.13.2
+  nibabel        5.4.2
+  scikit-learn   1.9.1
+  matplotlib     3.11.2
+  openpyxl       3.1.5
+  boto3          1.43.114
+  torch          2.14.1+cpu
+
+Project files:
+  193 of 193 files are the version 9 files
+
+Folders:
+  project  <project>
+  data     <data>
+  results  <project>\SOZ\results
+  free disk space: 42.2 GB
+
+Downloaded files:
+  seizure recordings: 138 (138 complete)
+  expert benchmark seizures: 40 of 40 readable
+
+Internet connections:
+  Penn 3T-7T dataset on AWS: OK (2 files at the top level)
+  expert benchmark server: OK (nemar.s3.us-east-2.amazonaws.com; 231 signals in the first recording)
+
+==============================================================================
+INSTALL OK

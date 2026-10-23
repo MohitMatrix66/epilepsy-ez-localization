@@ -1,0 +1,4 @@
+model,n,prevalence,AUROC,AUPRC,top1_hit,top3_hit
+region_prior,117,0.316,0.494,0.318,0.4,0.7
+logreg,117,0.316,0.487,0.33,0.4,0.7
+random_forest,117,0.316,0.449,0.294,0.3,0.6

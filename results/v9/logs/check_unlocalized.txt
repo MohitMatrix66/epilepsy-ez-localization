@@ -1,0 +1,23 @@
+# check_unlocalized   2026-10-22 09:14:32   python tools\check_unlocalized.py --all
+# project version 9
+
+Checking 15 patients for recorded contacts without coordinates ...
+  sub-PID02: 4 contacts without coordinates (DHI1 DHI2 DHI3 DHI4); earliest onset site without coordinates in 0 of 18 usable seizures; SOZ of step 2 unchanged -> OK
+  sub-PID03: every recorded contact has coordinates - nothing to check
+  sub-PID04: 1 contacts without coordinates (ROF3); earliest onset site without coordinates in 0 of 6 usable seizures; SOZ of step 2 unchanged -> OK
+  sub-PID07: every recorded contact has coordinates - nothing to check
+  sub-PID08: every recorded contact has coordinates - nothing to check
+  sub-PID12: 2 contacts without coordinates (RE10 RE9); earliest onset site without coordinates in 0 of 5 usable seizures; SOZ of step 2 unchanged -> DOUBTFUL
+  sub-PID16: every recorded contact has coordinates - nothing to check
+  sub-PID17: every recorded contact has coordinates - nothing to check
+  sub-PID18: every recorded contact has coordinates - nothing to check
+  sub-PID19: every recorded contact has coordinates - nothing to check
+  sub-PID20: 1 contacts without coordinates (RG7); earliest onset site without coordinates in 1 of 13 usable seizures; SOZ of step 2 unchanged -> DOUBTFUL  (already in EXCLUDE_FROM_TRAINING)
+  sub-PID21: every recorded contact has coordinates - nothing to check
+  sub-PID22: every recorded contact has coordinates - nothing to check
+  sub-PID25: every recorded contact has coordinates - nothing to check
+  sub-PID27: every recorded contact has coordinates - nothing to check
+
+DOUBTFUL = its seizures start on contacts without coordinates, so its SOZ labels would be wrong.
+Still used for training: sub-PID12 -> add them to EXCLUDE_FROM_TRAINING in config.py, then run SOZ\03_build_contacts.py and the steps after it again.
+Saved unlocalized_check.csv in <project>\SOZ\results

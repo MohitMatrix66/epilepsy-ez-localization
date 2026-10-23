@@ -1,0 +1,8 @@
+level,model,n,prevalence,AUROC,AUPRC,top1_hit,top3_hit,side_accuracy,mean_p,mean_p_soz_sites,mean_p_other_sites
+contact,cnn,679,0.127,0.586,0.176,0.3,0.6,,,,
+region (mean of its sites),cnn,117,0.316,0.644,0.453,0.7,0.8,,,,
+region (shared),region_prior,117,0.316,0.494,0.318,0.4,0.7,,,,
+region (shared),random_forest,117,0.316,0.449,0.294,0.3,0.6,,,,
+region (shared),cnn,117,0.316,0.644,0.453,0.7,0.8,,,,
+left-right pairs,cnn,85,,,,,,0.576,,,
+deep-structure cubes (not SOZ),cnn,200,,,,,,,0.418,0.568,0.501

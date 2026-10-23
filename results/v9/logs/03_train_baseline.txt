@@ -1,0 +1,26 @@
+# 03_train_baseline   2026-10-22 19:59:48   python 03_train_baseline.py
+# project version 9
+
+LOPO over 10 patients, 117 labelled regions, 6 features
+
+Out-of-fold results (regions with electrodes):
+        model   n  prevalence  AUROC  AUPRC  top1_hit  top3_hit
+ region_prior 117       0.316  0.494  0.318       0.4       0.7
+       logreg 117       0.316  0.487  0.330       0.4       0.7
+random_forest 117       0.316  0.449  0.294       0.3       0.6
+
+Reading the numbers:
+ * AUROC 0.5 = coin flip, 1.0 = perfect.
+ * AUPRC must be compared with the prevalence (0.32) - that is its 'coin flip'.
+ * top3_hit = in how many patients a true positive region is among the model's 3 highest-ranked regions.
+ * If the MRI models do not beat 'region_prior', the imaging features are not adding information yet.
+
+Most useful features (random forest importance):
+f_t1_rel_asym        0.216
+f_t1_rel             0.167
+f_t1_cv              0.165
+f_volume_rel         0.160
+f_volume_rel_asym    0.147
+f_t1_cv_asym         0.146
+
+Saved predictions and metrics to <project>\outputs/

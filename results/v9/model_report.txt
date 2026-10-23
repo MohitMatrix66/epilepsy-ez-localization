@@ -1,0 +1,99 @@
+========================================================================================================
+MODEL REPORT (version 3) - every patient separately, 95% intervals from re-sampling the patients
+========================================================================================================
+CNN model: version 9, channels ['T1', 'T1-mirror'], cubes 32 samples x 1.0 mm, 10 training patients, final models: yes
+
+1. SITES (contacts / pairs) - every patient tested by the model that never saw him/her (10 patients, 679 sites, 86 SOZ)
+patient  sites  SOZ CNN AUROC anatomy AUROC SOZ in CNN top 3 random top 3
+  PID02     69    8      0.49          0.80              yes          31%
+  PID04     49    4      0.84          0.53              yes          23%
+  PID08     89   14      0.62          0.49              yes          41%
+  PID12     81   14      0.42          0.45               no          44%
+  PID17     36   11      0.90          0.66              yes          68%
+  PID18     76    2      0.70          0.24               no           8%
+  PID19     47   11      0.99          0.88              yes          56%
+  PID21     55    3      0.73          0.86               no          16%
+  PID22     86   13      0.77          0.56              yes          39%
+  PID25     91    6      0.81          0.90               no          19%
+
+   CNN AUROC within patients      0.73 [0.62 to 0.83]   (chance = 0.50)
+   anatomy prior AUROC            0.64 [0.50 to 0.77]   (no MRI at all)
+   CNN minus anatomy              +0.09 [-0.05 to +0.22]   better in 6 of 10 patients
+   a SOZ site among the CNN's 3 highest sites: 6 of 10 patients (a random order: 34%)
+
+2. BRAIN REGIONS WITH ELECTRODES - the same 117 regions of 10 patients (37 SOZ regions)
+                              score AUROC within patients [95%] better than random SOZ region ranked 1st
+        region prior (anatomy only)         0.60 [0.47 to 0.72]             6 of 9               4 of 10
+ logistic regression (MRI features)         0.48 [0.25 to 0.71]             5 of 9               4 of 10
+       random forest (MRI features)         0.49 [0.30 to 0.68]             5 of 9               3 of 10
+         3D CNN (mean of its sites)         0.74 [0.51 to 0.92]             7 of 9               7 of 10
+number of electrodes in it (no MRI)         0.77 [0.69 to 0.86]             9 of 9               8 of 10
+   (the last row uses no MRI: clinicians put more electrodes where they suspect the SOZ. That is why the CNN's
+   region score is the MEAN of its sites here - the maximum would reward regions with many electrodes.)
+   CNN minus region prior: +0.14 [-0.03 to +0.30], better in 7 of 9 patients
+
+3. LEFT-RIGHT TEST (every patient): is each SOZ site scored above the SAME place on the other side?
+patient  SOZ sites with a mirror SOZ site scored higher than its mirror
+  PID02                        8                                    25%
+  PID04                        4                                   100%
+  PID08                       14                                    79%
+  PID12                       14                                    64%
+  PID17                       11                                    18%
+  PID18                        2                                   100%
+  PID19                       11                                    36%
+  PID21                        3                                    67%
+  PID22                       12                                    92%
+  PID25                        6                                    33%
+   mean over patients 0.61 [0.43 to 0.80] (0.50 = cannot tell the side; 1.00 = always the right side)
+
+3b. THE SAME QUESTION WITH REAL ELECTRODES (patients with electrodes on both sides)
+patient SOZ side sites on SOZ side CNN top 5 on SOZ side non-SOZ: SOZ side scored higher (AUROC)
+  PID02        R               99%                  100%                                    0.07
+  PID04        R               78%                   80%                                    0.13
+  PID08        L               90%                   60%                                    0.40
+  PID12        L               85%                   60%                                    0.35
+  PID25        L               88%                   60%                                    0.28
+   non-SOZ sites: is the SOZ side scored higher than the other side? AUROC 0.24 [0.13 to 0.35] (0.5 = cannot tell; below 0.5 = prefers the OTHER side)
+
+   The epileptic region against the SAME region on the other side:
+patient              SOZ region  CNN: SOZ sites  CNN: same region, other side
+  PID04       Right-Hippocampus            0.81                          0.64
+  PID04         ctx-rh-fusiform            0.76                          0.72
+  PID04 ctx-rh-inferiortemporal            0.80                          0.65
+  PID08        Left-Hippocampus            0.66                          0.60
+  PID08 ctx-lh-inferiortemporal            0.32                          0.15
+  PID12 ctx-lh-inferiorparietal            0.40                          0.30
+  PID25        Left-Hippocampus            0.66                          0.84
+   the epileptic region scored higher in 6 of 7 comparisons
+
+4. WHICH SIDE FROM MRI FEATURES (07_lateralization.py, every patient with a clinical side; side_model = version 9)
+                                         model  patients  accuracy  balanced_accuracy  AUROC
+                                      majority        25     0.640              0.500    NaN
+                              hippocampus_rule        25     0.560              0.510    NaN
+                                        logreg        25     0.560              0.535  0.528
+                                    side_model        25     0.560              0.559  0.646
+side_model: MRI report = hippocampal sclerosis         6     0.333              0.200  0.200
+                side_model: all other patients        19     0.632              0.631  0.682
+side_model: only when sure (10 of 25 patients)        10     0.700              0.667  0.833
+
+5. DEEP STRUCTURES (version 9 fix): 'not SOZ' cubes from thalamus, caudate, putamen, pallidum, accumbens, each predicted by the model that never saw the patient
+   mean probability: deep cubes 0.42, SOZ sites 0.57, other sites 0.50   (v8.1: deep 0.74, SOZ 0.57, other 0.43)
+   deep cubes scored below the patient's median site: 70% of 200
+
+6. SHORTCUT CHECK (version 9): does the score simply follow the amount of fluid (dark voxels) in the cube?
+   correlation of the score with fluid, within patients: -0.09   (fluid with being SOZ: -0.06)
+   above +0.5 = the model mostly measures fluid (the v8.1 shortcut), not the disease
+
+--------------------------------------------------------------------------------------------------------
+SUMMARY
+   Ranks SOZ sites above chance:              YES
+   Learned more than anatomy (sites):         NOT CLEAR
+   Learned more than anatomy (regions):       NOT CLEAR
+   Knows the epileptic side (site vs mirror): NOT CLEAR
+   Knows the epileptic side (both-side electrodes): NO - prefers the OTHER side
+   Deep structures scored low (v9 fix works):   YES
+   Score just follows fluid in the cube:        NO
+
+How to read this: an interval that includes the reference (0.5, or 0 for a difference) means 'we cannot tell yet'.
+With about 10 patients the intervals are wide. Do not change settings after looking at these numbers (or say so
+when you report them): choosing settings on the test patients makes the result look better than it is.

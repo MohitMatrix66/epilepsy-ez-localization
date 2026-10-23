@@ -1,0 +1,27 @@
+# 01_label_contacts   2026-10-22 09:24:10   python 01_label_contacts.py
+# project version 9
+
+subject      contacts  near brain  near GM   SOZ  L/R matches name
+sub-PID02          99       100%      93%     8             100%
+sub-PID04          95       100%      99%     4              99%
+sub-PID08          96       100%      99%    14              99%
+sub-PID12         117        88%      76%    16             100%
+sub-PID17          69        94%      72%    11             100%
+sub-PID18         104        99%      96%     2             100%
+sub-PID19          83        76%      71%    11             100%
+sub-PID21          75        89%      83%     3             100%
+sub-PID22         132        86%      71%    13             100%
+sub-PID25         105        97%      88%     6             100%
+
+How to read this:
+ * 'near brain' = in the brain or within 5 mm of it. The outer contacts of depth (stereo-EEG) electrodes
+   sit in the skull, so 70-100% is normal; those contacts are not used for training. If it is very low
+   (< 50%), the coordinates are in the wrong space: try COORD_SPACE = 'tkr' in config.py.
+ * 'near GM' = contacts on or within a few mm of a grey-matter region. Depth electrodes have
+   many contacts in white matter, so 40-80% is normal. Only these contacts get a region.
+ * 'L/R matches name': contacts named L... should be in the left hemisphere, R... in the right.
+   If this is near 0%, left and right are flipped somewhere. 'n/a' = names have no L/R prefix.
+ * 'uncertain' sites strongly start a seizure but are not SOZ (e.g. a one-off start): they are used neither
+   as SOZ nor as 'not SOZ' (left out of the patches, and their region gets no label unless it has a SOZ site).
+
+Positive targets: 88 of 975 contacts (9.0%); 69 contacts outside the brain and 236 uncertain contacts will not be used for training.  Saved <project>\outputs\contacts_labeled.csv

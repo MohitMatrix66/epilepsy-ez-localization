@@ -1,0 +1,35 @@
+==============================================================================================================
+THE FINAL MODEL ON PATIENTS IT WAS NEVER TRAINED ON - against the clinical record (metadata_3T_7T.xlsx)
+==============================================================================================================
+15 patients: the patients without intracranial EEG (MRI only).  Models: version 9, trained on 10 iEEG patients.
+
+  subject                   clinical_side_text cnn_side cnn_side_correct side_model clinical_lobe_text             top_region                       mri_lesion mri_lesion_side
+sub-PID01                            Left only        L             True          L           Temporal         ctx-rh-lingual        Mesial temporal sclerosis               L
+sub-PID05                            Left only        L             True          L           Temporal ctx-rh-parahippocampal                           
+sub-PID06                           Right only        R             True          L           Temporal ctx-rh-parahippocampal        Mesial temporal sclerosis               R
+sub-PID09                         Inconclusive        R              NaN   not sure    Non-localizable ctx-rh-parahippocampal Malformation of cortical/brain d               L
+sub-PID10 Bilateral independent Seizure Onsets        L              NaN   not sure           Temporal ctx-rh-parahippocampal                           
+sub-PID11                         Inconclusive        L              NaN   not sure    Non-localizable ctx-lh-parahippocampal                           
+sub-PID13                            Left only        L             True          L           Temporal        ctx-rh-fusiform                           
+sub-PID14                           Right only        R             True   not sure    Non-localizable         Right-Amygdala                           
+sub-PID15                         Inconclusive        L              NaN   not sure    Non-localizable ctx-lh-parahippocampal                           
+sub-PID23                            Left only        L             True   not sure           Temporal      ctx-lh-entorhinal        Mesial temporal sclerosis               L
+sub-PID24                            Left only        L             True   not sure           Temporal        ctx-lh-fusiform                           
+sub-PID26                         Right > Left        R             True          R           Temporal ctx-lh-parahippocampal ventriculomegaly and bilateral h               B
+sub-PID28                            Left only        L             True   not sure           Temporal          Left-Amygdala        Mesial temporal sclerosis               L
+sub-PID29                         Inconclusive        L              NaN          R        Multi-focal ctx-lh-parahippocampal        Mesial temporal sclerosis               R
+sub-PID30                           Right only        R             True   not sure        Multi-focal        ctx-rh-fusiform                           
+
+SIDE (CNN): correct in 10 of 10 patients with a clinical side = 100% (95% interval 72%-100%); fair score (AUROC, not affected by a lean to one side) 1.00.
+      always guessing the more common side (L) would be right in 60%; the CNN said 'left' for 10 of 15.
+SIDE (side model of 07): correct in 4 of 5 patients where it was sure (5 'not sure').
+SIDE vs the MRI report: the CNN's side = the side of the one-sided MRI lesion in 4 of 6 patients (sub-PID01, sub-PID06, sub-PID09, sub-PID23, sub-PID28, sub-PID29).
+HIPPOCAMPAL SCLEROSIS: the sick hippocampus scored above the healthy one in 3 of 5 patients (sub-PID01, sub-PID06, sub-PID23, sub-PID28, sub-PID29).
+LOBE: the top region's lobe = the clinical lobe in 8 of 9 patients (always saying 'temporal' would be right in 100%).
+
+How to read this: patients with an Inconclusive or Bilateral clinical side are shown but not counted for
+the side. With so few patients the 95% intervals are wide. The model's design was changed once after its
+first test on these patients (version 8.1 -> 9), so say so when you report these numbers.
+Maps: open each <patient>\<patient>_ez_probability.nii.gz on top of the file in the column t1_to_view of
+comparison_mri_only.csv (README.txt). Research prototype trained on 10 patients - not a clinical tool.
+

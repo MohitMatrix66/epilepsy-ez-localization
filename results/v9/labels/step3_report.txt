@@ -1,0 +1,28 @@
+
+====================================================================================================
+  subject  aligned  near_brain  SOZ SOZ side clinical side agree SOZ lobe clinical lobe agree     label quality  train
+sub-PID02     True       1.000    8        R    Right only  True    mixed   Multi-focal   None               ok   True
+sub-PID03     True       1.000    0              Left only  None               Parietal   None no repeated o...  False
+sub-PID04     True       1.000    4        R    Right only  True temporal      Temporal   True               ok   True
+sub-PID07     True       0.869   23        L  Left > Right  True  frontal       Frontal   True   single seizure  False
+sub-PID08     True       1.000   14        L     Left only  True temporal      Temporal   True               ok   True
+sub-PID12     True       0.816   16        L     Left only  True  frontal       Frontal   True               ok   True
+sub-PID16     True       0.854    0              Left only  None               Temporal   None no repeated o...  False
+sub-PID17     True       0.859   11        L     Left only  True temporal      Temporal   True               ok   True
+sub-PID18     True       0.984    2        L     Left only  True temporal      Temporal   True               ok   True
+sub-PID19     True       0.708   11        R    Right only  True temporal      Temporal   True               ok   True
+sub-PID20     True       0.803    4        L     Left only  True parietal      Temporal  False         excluded  False
+sub-PID21     True       0.807    3        L  Left > Right  True temporal   Multi-focal   None               ok   True
+sub-PID22     True       0.776   13        R    Right only  True temporal      Temporal   True               ok   True
+sub-PID25     True       0.908    6        L     Left only  True temporal      Temporal   True               ok   True
+sub-PID27     True       0.730    0             Right only  None               Temporal   None no repeated o...  False
+====================================================================================================
+SOZ version 6.1: side agrees with the clinical lateralization in 12 of 12 patients; lobe agrees in 9 of 10.
+SOZ version 5 (EI), same patients: side agrees with the clinical lateralization in 12 of 12 patients; lobe agrees in 8 of 8.
+(The clinical lateralization / localization is the decision of the multidisciplinary epilepsy surgery conference (dataset paper, Imtiaz et al. 2026) - a strong clinical reference, but not an independent ground truth: for the patients with iEEG it may already include the iEEG.)
+SOZ lobe = the most common lobe of the SOZ sites (all lobes are listed above for every patient); 'mixed' = no single most common lobe.
+
+contacts.csv: 975 sites, 88 SOZ, 236 uncertain (not used as 'not SOZ'), 10 patients for training -> <project>\SOZ\results\contacts.csv
+  patients: sub-PID02, sub-PID04, sub-PID08, sub-PID12, sub-PID17, sub-PID18, sub-PID19, sub-PID21, sub-PID22, sub-PID25
+contacts_all.csv: 1618 sites from 15 patients (all that passed the checks)
+Next: python tools\plot_seizure.py --audit   then   python 01_label_contacts.py  (and the model steps)
